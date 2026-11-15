@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10243a"><meta name="description" content="Math avec Mohamed — plateforme bilingue de QCM de mathématiques">
+<link rel="stylesheet" href="style.css"><link rel="manifest" href="manifest.webmanifest">
+<title>Math avec Mohamed</title>
+</head>
+<body>
+<header class="topbar">
+ <a class="brand" href="#" data-page="home"><span class="mark">∑</span><span><b>Math avec Mohamed</b><small>APPRENDRE · S'ENTRAÎNER · RÉUSSIR</small></span></a>
+ <nav><button class="nav active" data-page="home" data-i18n="home">Accueil</button><button class="nav" data-page="student" data-i18n="student">Espace élève</button><button class="nav" data-page="teacher" data-i18n="teacher">Espace professeur</button></nav>
+ <div class="head-actions"><button id="langBtn" class="lang">عربية</button><button id="menu" class="menu">☰</button></div>
+</header>
+<main>
+<section id="home" class="page active">
+ <div class="hero">
+  <div><span class="eyebrow" data-i18n="eyebrow">LA MATHÉMATIQUE DEVIENT PLUS SIMPLE</span><h1 data-i18n="heroTitle">Progresse à ton rythme.<br><em>Réussis tes examens.</em></h1><p data-i18n="heroText">Entraîne-toi avec des QCM, comprends tes erreurs et suis tes progrès en mathématiques.</p>
+  <div class="actions"><button class="primary" data-page="student"><span data-i18n="start">Commencer un QCM</span> →</button><button class="outline" data-page="teacher" data-i18n="teacherSpace">Espace professeur</button></div>
+  <div class="trust"><span data-i18n="trust1">✓ Correction immédiate</span><span data-i18n="trust2">✓ Tous les niveaux</span><span data-i18n="trust3">✓ À ton rythme</span></div></div>
+  <div class="visual"><div class="visual-card"><span class="eyebrow" data-i18n="daily">DÉFI DU JOUR</span><div class="formula-big">f(x) = x² − 3x + 2</div><div class="line"></div><div class="visual-foot"><span data-i18n="functions">Étude des fonctions</span><b>+1 QCM</b></div></div><div class="bubble" data-i18n="bubble">✦ Apprendre en pratiquant</div></div>
+ </div>
+ <div class="section-title"><div><span class="eyebrow" data-i18n="path">TON PARCOURS</span><h2 data-i18n="choose">Choisis ton niveau</h2></div><p data-i18n="chooseText">Des questions adaptées au programme scolaire.</p></div>
+ <div class="levels" id="levels"></div>
+ <div class="features"><article><span>01</span><h3 data-i18n="feat1">Entraînement ciblé</h3><p data-i18n="feat1p">Révise chapitre par chapitre avec des questions progressives.</p></article><article><span>02</span><h3 data-i18n="feat2">Correction expliquée</h3><p data-i18n="feat2p">Comprends la méthode, pas seulement la bonne réponse.</p></article><article><span>03</span><h3 data-i18n="feat3">Suivi des progrès</h3><p data-i18n="feat3p">Visualise tes résultats et identifie les notions à renforcer.</p></article></div>
+</section>
+<section id="student" class="page">
+ <div class="section-title"><div><span class="eyebrow" data-i18n="studentArea">ESPACE ÉLÈVE</span><h2 data-i18n="practice">Entraînement QCM</h2><p class="muted" data-i18n="practiceText">Choisis ton niveau et réponds aux questions.</p></div><span class="tag" data-i18n="practiceMode">Mode entraînement</span></div>
+ <div class="quiz-layout"><aside class="panel filters"><label data-i18n="level">Niveau<select id="level"><option>2BAC</option><option>1BAC</option><option>TC</option><option>3AC</option><option>2AC</option><option>1AC</option></select></label><label data-i18n="chapter">Chapitre<select id="chapter"><option value="all">Tous les chapitres</option><option>Limites et continuité</option><option>Étude des fonctions</option><option>Suites numériques</option></select></label><div class="note" data-i18n="note">Les questions sont organisées par niveau et chapitre.</div><button id="restart" class="outline wide" data-i18n="restart">Recommencer</button></aside>
+ <div class="panel quiz"><div class="quiz-meta"><span id="counter">QUESTION 1 / 3</span><span id="qtag">2BAC · MATHÉMATIQUES</span></div><div class="progress"><span id="bar"></span></div><h3 id="question"></h3><div class="mathbox" id="formula"></div><div id="answers" class="answers"></div><div id="feedback" class="feedback" hidden></div><div class="quiz-actions"><button id="clear" class="outline" data-i18n="clear">Effacer</button><button id="next" class="primary" disabled data-i18n="validate">Valider ma réponse →</button></div></div></div>
+ <div class="result-strip"><b data-i18n="yourProgress">Ton activité</b><span id="score">0</span><small data-i18n="correctAnswers">réponses correctes dans cette session</small></div>
+</section>
+<section id="teacher" class="page">
+ <div class="section-title"><div><span class="eyebrow" data-i18n="teacherArea">ESPACE PROFESSEUR</span><h2 data-i18n="manage">Gestion des QCM</h2><p class="muted" data-i18n="manageText">Prépare tes questions et organise tes entraînements.</p></div><span class="tag" data-i18n="demo">Aperçu professeur · démo</span></div>
+ <div class="teacher-layout"><aside class="panel stats"><div class="stat-icon">∑</div><h3 id="total">3</h3><p data-i18n="questionCount">Questions disponibles dans cette démo</p><hr><h3>6</h3><p data-i18n="levelsCount">Niveaux scolaires</p><div class="note" data-i18n="localNotice">Les questions ajoutées sont conservées dans ce navigateur.</div></aside>
+ <form id="form" class="panel editor"><h3 data-i18n="addQuestion">Ajouter une question</h3><label data-i18n="statement">Énoncé (français)<input id="qfr" required placeholder="Ex. Calculer la dérivée de f(x) = x²"></label><label data-i18n="statementAr">نص السؤال (العربية)<input id="qar" placeholder="مثال: احسب مشتقة الدالة"></label><div class="grid2"><label data-i18n="optionA">Réponse A<input id="a" required></label><label data-i18n="optionB">Réponse B<input id="b" required></label><label data-i18n="optionC">Réponse C<input id="c" required></label><label data-i18n="optionD">Réponse D<input id="d" required></label></div><div class="grid2"><label data-i18n="level">Niveau<select id="newlevel"><option>2BAC</option><option>1BAC</option><option>TC</option><option>3AC</option><option>2AC</option><option>1AC</option></select></label><label data-i18n="correct">Bonne réponse<select id="correct"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></label></div><label data-i18n="explanation">Explication (français)<input id="why" placeholder="Explication de la bonne réponse"></label><label data-i18n="explanationAr">الشرح (العربية)<input id="whyar" placeholder="شرح الإجابة الصحيحة"></label><button class="primary wide" type="submit" data-i18n="saveQuestion">＋ Enregistrer la question</button></form></div>
+</section>
+</main>
+<footer><span>© 2026 Math avec Mohamed</span><span data-i18n="footer">Une plateforme pour apprendre et progresser.</span></footer>
+<script src="app.js"></script>
+</body></html>
