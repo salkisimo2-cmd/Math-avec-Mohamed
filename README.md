@@ -16,3 +16,7 @@ Ouvrir `index.html` dans un navigateur. Pour tester le mode PWA/service worker, 
 
 ## Limites à traiter avant lancement public
 Ce livrable reste un prototype front-end. Les comptes réels, authentification sécurisée, base de données cloud, rôles professeur/élève, classes, synchronisation multi-appareils, paiements et publication/domaine ne sont pas encore configurés. Les questions locales ne sont visibles que sur le même navigateur/appareil.
+
+
+## Photo du professeur
+La photo de la page d'accueil se trouve dans `assets/mohamed-profile.jpeg`. Pour la remplacer, gardez ce nom de fichier ou mettez à jour le chemin dans `index.html`.
